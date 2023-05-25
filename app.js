@@ -11,8 +11,6 @@ if ("geolocation" in navigator) {
   navigator.geolocation.getCurrentPosition(async (position) => {
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
-    // const lat = 12.90153845;
-    // const lng = 77.51818965029108;
     const data = { lat, lng };
 
     document.getElementById("btn").addEventListener("click", async () => {
@@ -28,7 +26,6 @@ if ("geolocation" in navigator) {
       console.log(json);
 
 
-    let firstTime = true;
     const target = L.icon({
       iconUrl: "target.png",
       iconSize: [50, 32],
@@ -39,19 +36,11 @@ if ("geolocation" in navigator) {
       const { lat, lng } = data;
       marker.setLatLng([lat, lng]);
       console.log(lat, lng);
-      if (firstTime) {
-        map.setView([lat, lng], 16);
-        firstTime = false;
-      }
+      map.setView([lat, lng], 16);
     }
     victim(data);
-
-    // 77.51362069748443, 12.90889810414145
     
-
     });
-
-    //Ambulaance location
 
     document.getElementById("call").addEventListener("click", async () => {
 var victim_lat=data.lat;
