@@ -31,7 +31,7 @@ if ("geolocation" in navigator) {
       iconSize: [50, 32],
       iconAnchor: [25, 16],
     });
-    const marker = L.marker([0, 0], { icon: target }).addTo(map);
+    const marker = L.marker([data.lat, data.lng], { icon: target }).addTo(map);
     async function victim(data) {
       const { lat, lng } = data;
       marker.setLatLng([lat, lng]);
