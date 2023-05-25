@@ -32,13 +32,9 @@ if ("geolocation" in navigator) {
       iconAnchor: [25, 16],
     });
     const marker = L.marker([0, 0], { icon: target }).addTo(map);
-    async function victim(data) {
-      const { lat, lng } = data;
-      marker.setLatLng([lat, lng]);
-      map.setView([lat, lng], 16);
-      }
-    victim(data);
-    
+    marker.setLatLng([lat, lng]);
+    map.setView([lat, lng], 16);
+  
     });
 
     document.getElementById("call").addEventListener("click", async () => {
